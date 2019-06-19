@@ -1,8 +1,6 @@
 import React from 'react';
 import { Row, NavItem, Navbar, Icon } from 'react-materialize';
-
 import styled from 'styled-components';
-
 import logo from '../../images/logo.png';
 
 const NavbarBlue = styled(Navbar)`
