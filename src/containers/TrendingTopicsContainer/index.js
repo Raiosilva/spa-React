@@ -1,38 +1,22 @@
 import React, { Component } from 'react';
 import TrendingTopics from '../../components/TrendingTopics';
-import axios from 'axios';
+import { connect } from 'react-redux';
 
 class TrendingTopicsContainer extends Component {
-  constructor(props) {
-    super(props);
-
-    this.state = {
-      hashtags: []
-    };
-  }
-
-  componentDidMount() {
-    axios.get(process.env.REACT_APP_API + '/trending/index')
-    .then((response) => {
-      console.log(response.data.hashtags);
-      this.setState(() => {
-        return {
-          hashtags: response.data.hashtags
-        }
-      })
-    })
-    .catch(function (error) {
-      console.log(error);
-    });
-  }
-
-  render() {
-    return (
+    render() {
+     return (
       <div>
-        <TrendingTopics hashtags={this.state.hashtags} />
+       <TrendingTopics hashtags={this.props.hashtags} />
       </div>
-    );
+     );
+   }
+ }
+ 
+ function mapStateToProps(state) {
+  return {
+   hashtags: state.trendings.hashtags
   }
-}
+ };
 
-export default TrendingTopicsContainer;
+
+export default connect(mapStateToProps)(TrendingTopicsContainer);
