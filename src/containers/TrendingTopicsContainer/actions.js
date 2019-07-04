@@ -1,6 +1,14 @@
+import axios from 'axios';
+import { UPDATE_TRENDINGS } from './constants';
+
 export function getHashtags() {
-  console.log('E ai Programador(a)')
-  return {
-    type: 'UPDATE_TREDINGS'
+
+  const request = axios.get(process.env.REACT_APP_API + '/trending/index');
+
+  return (dispatch) => {
+    request.then(
+      resp => dispatch({ type: UPDATE_TRENDINGS, payload: resp.data }),
+      error => window.Materialize.toast('Fetch error', 4000, 'red')
+    );
   };
 }
