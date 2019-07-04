@@ -3,16 +3,8 @@ import ReactDOM from 'react-dom';
 import './index.css';
 import App from './App';
 import * as serviceWorker from './serviceWorker';
-import { createStore, combineReducers } from 'redux';
 import { Provider } from 'react-redux';
-import  TrendingTopicsReducer  from './containers/TrendingTopicsContainer/reducer.js';
-
-
-const Reducers = combineReducers({
-  trendings: TrendingTopicsReducer
-});
-
-const Store = createStore(Reducers);
+import  Store  from './configureStore';
 
 ReactDOM.render(
   <Provider store ={Store}>
@@ -21,7 +13,4 @@ ReactDOM.render(
   , document.getElementById('root')
 );
 
-// If you want your app to work offline and load faster, you can change
-// unregister() to register() below. Note this comes with some pitfalls.
-// Learn more about service workers: https://bit.ly/CRA-PWA
 serviceWorker.unregister();
