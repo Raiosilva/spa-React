@@ -13,4 +13,5 @@ class UserFollow extends Component {
       </InvisibleButton>
     );
   }
-}export default UserFollow;
+}
+export default UserFollow;

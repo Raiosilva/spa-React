@@ -3,4 +3,7 @@ import styled from 'styled-components';
 
 
 const RowNoBottomMargin = styled(Row)`
- margin-bottom: 0px`;export default RowNoBottomMargin;
+ margin-bottom: 0px`
+;
+
+ export default RowNoBottomMargin;
