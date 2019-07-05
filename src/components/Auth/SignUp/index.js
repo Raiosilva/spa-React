@@ -26,8 +26,8 @@ class SignUp extends Component {
          placeholder="Password" 
        />
        <div className="text-right">
-        <button type="submit" className="blue btn grey darken-2">Sign Up</button>
-        </div>
+          <button type="submit" className="blue btn grey darken-2">Sign Up</button>
+       </div>
       </LocalForm>
      </Card>
     </Col>
