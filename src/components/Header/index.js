@@ -15,13 +15,13 @@ const IconUser = styled(Icon)`
   font-size: 40px !important;`
 ;
 
-const Header = () => (
+const Header = (props) => (
   <Row>
-    <NavbarBlue brand={<Logo src={logo} className="responsive-img col m6 center logo" />} right>
-      <NavItem href='/logout'>
+    <NavbarBlue href="/timeline" brand={<Logo src={logo} className="responsive-img col m6 center logo" />} right>
+      <NavItem onClick={() => props.logOut()} >
         Logout
       </NavItem>
-      <NavItem href='/user/x/edit'>
+      <NavItem href={`/user/${props.id}/edit`}>
           <IconUser>account_circle</IconUser>
       </NavItem>
     </NavbarBlue>

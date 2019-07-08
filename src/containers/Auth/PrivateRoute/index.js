@@ -1,8 +1,8 @@
-import React, { Component } from 'react';
+import React from 'react';
 import { Route, Redirect } from 'react-router-dom';
 
 import { connect } from 'react-redux';
-import { bindActionCreators, bindActionCreators } from 'redux';
+import { bindActionCreators } from 'redux';
 import { getCurrentUser } from '../actions';
 
 class PrivateRoute extends React.Component {

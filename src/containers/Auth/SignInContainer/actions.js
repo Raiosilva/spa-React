@@ -1,8 +1,8 @@
-import API from '../../../api';
+import Api from '../../../api';
 import { push } from 'react-router-redux';
 
 export function logIn({email, password}) {
-  const request = API.post('/user_token', {"auth": {email, password}});
+  const request = Api.post('/user_token', {"auth": {email, password}});
 
   return (dispatch) => {
     request.then(
